@@ -1,0 +1,31 @@
+using UnityEngine;
+
+public class Checkpoints : MonoBehaviour
+{
+    Animator anim;
+    public GameObject player;
+    Rigidbody2D rb;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        check1();
+    }
+    void check1()
+    {
+        if (player.transform.position.x > transform.position.x)
+        {
+            anim.SetBool("check1", true);
+        }
+        else
+        {
+            anim.SetBool("check1", false);
+        }
+    }
+}
